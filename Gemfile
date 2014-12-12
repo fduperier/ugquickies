@@ -15,6 +15,8 @@ gem 'devise'
 gem 'pundit'
 gem 'simple_form'
 gem 'upmin-admin'
+gem 'acts_as_votable'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
