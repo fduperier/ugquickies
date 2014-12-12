@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212181046) do
+ActiveRecord::Schema.define(version: 20141212190613) do
+
+  create_table "quickies", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "user_group_id"
+    t.integer  "creator_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quickies", ["creator_id"], name: "index_quickies_on_creator_id"
+  add_index "quickies", ["user_group_id"], name: "index_quickies_on_user_group_id"
 
   create_table "user_groups", force: true do |t|
     t.string   "name"
