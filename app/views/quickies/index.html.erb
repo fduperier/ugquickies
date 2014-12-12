@@ -1,0 +1,31 @@
+<h1>Listing quickies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>User group</th>
+      <th>Creator</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quickies.each do |quicky| %>
+      <tr>
+        <td><%= quicky.title %></td>
+        <td><%= quicky.description %></td>
+        <td><%= quicky.user_group %></td>
+        <td><%= quicky.creator %></td>
+        <td><%= link_to 'Show', quicky %></td>
+        <td><%= link_to 'Edit', edit_quicky_path(quicky) %></td>
+        <td><%= link_to 'Destroy', quicky, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quickie', new_quicky_path %>

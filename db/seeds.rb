@@ -23,3 +23,19 @@ puts 'CREATED USER GROUPS: ' << user_group.name
 
 user_group = UserGroup.find_or_create_by!(name: "Geneva MUG")
 puts 'CREATED USER GROUPS: ' << user_group.name
+
+
+# Création de quelques Quickies
+quickie = Quickie.find_or_create_by!(title: "JUG Janvier") do |quickie|
+  quickie.description = 'Quickie pour le JUG de Janvier'
+  quickie.date = DateTime.strptime('01/01/2015 19:00:00', '%d/%m/%Y %H:%M:%S')
+  quickie.user_group = user_group_jug
+  quickie.creator = user
+end
+
+quickie = Quickie.find_or_create_by!(title: "JUG Février") do |quickie|
+  quickie.description = 'Quickie pour le JUG de Février'
+  quickie.date = DateTime.strptime('01/02/2015 19:00:00', '%d/%m/%Y %H:%M:%S')
+  quickie.user_group = user_group_jug
+  quickie.creator = user
+end

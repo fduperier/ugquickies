@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  has_many :quickies, :foreign_key => "creator_id", :inverse_of => :creator
 end

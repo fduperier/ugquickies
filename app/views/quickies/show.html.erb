@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @quicky.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @quicky.description %>
+</p>
+
+<p>
+  <strong>User group:</strong>
+  <%= @quicky.user_group %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @quicky.creator %>
+</p>
+
+<%= link_to 'Edit', edit_quicky_path(@quicky) %> |
+<%= link_to 'Back', quickies_path %>
