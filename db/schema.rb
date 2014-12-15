@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20141212202102) do
 
   create_table "user_groups", force: true do |t|
     t.string   "name"
+    t.string   "picture_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

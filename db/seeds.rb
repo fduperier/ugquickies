@@ -9,20 +9,30 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
 # Création de quelques User Groups
-user_group_jug = UserGroup.find_or_create_by!(name: "Geneva JUG")
-puts 'CREATED USER GROUPS: ' << user_group_jug.name
+user_group_jug = UserGroup.find_or_create_by!(name: "Geneva JUG") do |ug|
+  ug.picture_name = 'geneva-jug-duke-181.png'
+end
+puts 'CREATED USER GROUP: ' << user_group_jug.name
 
-user_group = UserGroup.find_or_create_by!(name: "GVA .NET User Group")
-puts 'CREATED USER GROUPS: ' << user_group.name
+user_group = UserGroup.find_or_create_by!(name: "GVA .NET User Group") do |ug|
+  ug.picture_name = 'geneva.net.jpeg'
+end
+puts 'CREATED USER GROUP: ' << user_group.name
 
-user_group = UserGroup.find_or_create_by!(name: "Scala Romandie")
-puts 'CREATED USER GROUPS: ' << user_group.name
+user_group = UserGroup.find_or_create_by!(name: "Scala Romandie") do |ug|
+  ug.picture_name = 'scala-romandie.jpeg'
+end
+puts 'CREATED USER GROUP: ' << user_group.name
 
-user_group = UserGroup.find_or_create_by!(name: "Docker Geneva")
-puts 'CREATED USER GROUPS: ' << user_group.name
+user_group = UserGroup.find_or_create_by!(name: "Docker Geneva") do |ug|
+  ug.picture_name = 'docker-geneva.jpeg'
+end
+puts 'CREATED USER GROUP: ' << user_group.name
 
-user_group = UserGroup.find_or_create_by!(name: "Geneva MUG")
-puts 'CREATED USER GROUPS: ' << user_group.name
+user_group = UserGroup.find_or_create_by!(name: "Geneva MUG") do |ug|
+  ug.picture_name = 'genevamug.jpeg'
+end
+puts 'CREATED USER GROUP: ' << user_group.name
 
 
 # Création de quelques Quickies
