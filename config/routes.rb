@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   mount Upmin::Engine => '/admin'
-  root to: 'visitors#index'
   devise_for :users
 
   resources :users
@@ -8,4 +7,6 @@ Rails.application.routes.draw do
     put "up", to: :up, on: :member
     put "down", to: :down, on: :member
   end
+
+  root to: 'home#index'
 end
