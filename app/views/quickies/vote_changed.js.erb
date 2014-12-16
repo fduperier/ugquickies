@@ -1,0 +1,1 @@
+$(".quickie-<%= @quicky.id %> .nb-vote").html("<%= escape_javascript(render partial: 'votes', locals: { quickie: @quicky }) %>");

@@ -42,6 +42,7 @@ quickie = Quickie.find_or_create_by!(title: "JUG Janvier") do |quickie|
   quickie.user_group = user_group_jug
   quickie.creator = user
 end
+puts 'CREATED QUICKIE: ' << quickie.title
 
 quickie = Quickie.find_or_create_by!(title: "JUG Février") do |quickie|
   quickie.description = 'Quickie pour le JUG de Février'
@@ -49,3 +50,5 @@ quickie = Quickie.find_or_create_by!(title: "JUG Février") do |quickie|
   quickie.user_group = user_group_jug
   quickie.creator = user
 end
+puts 'CREATED QUICKIE: ' << quickie.title
+

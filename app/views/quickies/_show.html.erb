@@ -1,0 +1,22 @@
+<div class="media thumbnail quickie quickie-<%= quickie.id %> clearfix">
+  <div class="media-left col-md-3">
+    <a href="#">
+      <%= image_tag "#{quickie.user_group.picture_name}", title: quickie.user_group.name, alt: quickie.user_group.name %>
+    </a>
+  </div>
+  <div class="media-body col-md-6">
+    <h4 class="media-heading">
+      <%= link_to quickie.title, quicky_path(quickie) %>
+    </h4>
+    <%= quickie.description %>
+  </div>
+  <div class="media-right text-center thumbnail col-md-3">
+		<div class="date">
+	    <%= quickie.date.strftime("%d/%m/%Y") %><br />
+	    <%= quickie.date.strftime("%H:%M") %><br />
+		</div>
+    <div class="nb-vote">
+      <%= render partial: 'quickies/votes', locals: { quickie: quickie } %>
+    </div>
+  </div>
+</div>

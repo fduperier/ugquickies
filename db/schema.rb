@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20141212202102) do
   create_table "quickies", force: true do |t|
     t.string   "title"
     t.text     "description"
+    t.datetime "date"
     t.integer  "user_group_id"
     t.integer  "creator_id"
     t.datetime "created_at"
