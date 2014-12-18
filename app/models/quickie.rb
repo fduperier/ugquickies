@@ -4,7 +4,7 @@ class Quickie < ActiveRecord::Base
   belongs_to :user_group, :class_name => "UserGroup", :foreign_key => "user_group_id", :inverse_of => :quickies
   belongs_to :creator, :class_name => "User", :foreign_key => "creator_id", :inverse_of => :quickies
 
-  scope :by_user_group, ->(user_group) { where(user_group: :user_group) }
+  scope :by_user_group, ->(user_group_id) { where(user_group_id: user_group_id) }
 
   scope :past, -> { where('date < ?', DateTime.now) }
   scope :past_ordered, -> { past.order(date: :desc) }

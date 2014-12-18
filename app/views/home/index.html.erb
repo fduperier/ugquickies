@@ -2,6 +2,15 @@
 <p><%= link_to 'Users:', users_path %> <%= User.count %> registered</p>
 
 <div class="container">
+	<div class="row text-center">
+		<div class="btn-group" role="group">
+			<%= link_to 'All', root_path, class: "btn #{class_name_for_all}", role: 'button' %>
+			<% @user_groups.each do |user_group| %>
+		    <%= link_to user_group.name, root_path(user_group: user_group.id), class: "btn #{class_name_for(user_group)}", role: 'button' %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">&nbsp;</div>
   <div class="row">
     <!-- Past quickies -->
     <div class="col-md-6">
