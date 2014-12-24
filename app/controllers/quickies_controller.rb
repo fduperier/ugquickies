@@ -6,6 +6,7 @@ class QuickiesController < ApplicationController
 
   def show
     authorize @quickie
+    commontator_thread_show(@quickie)
 
     respond_with(@quickie)
   end

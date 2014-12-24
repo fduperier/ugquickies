@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   mount Upmin::Engine => '/admin'
+  mount Commontator::Engine => '/commontator'
+
   devise_for :users
 
   resources :users

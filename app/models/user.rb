@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   acts_as_voter
+  acts_as_commontator
 
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?

@@ -32,3 +32,5 @@
 <% if policy(@quickie).destroy? %>
 | <%= link_to 'Destroy', @quickie, confirm: 'Are you sure?', method: :delete %>
 <% end %>
+
+<%= commontator_thread(@quickie) %>
