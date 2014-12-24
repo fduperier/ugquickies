@@ -17,4 +17,8 @@ class Quickie < ActiveRecord::Base
   validate :title, :presence => true
   validate :description, :presence => true
   validate :date, :presence => true
+  
+  def self.policy_class
+    QuickiePolicy
+  end
 end

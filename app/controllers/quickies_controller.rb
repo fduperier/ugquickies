@@ -1,59 +1,75 @@
 class QuickiesController < ApplicationController
-  before_action :set_quicky, only: [ :show, :edit, :update, :destroy, :up, :down ]
+  before_action :set_quickie, only: [ :show, :edit, :update, :destroy, :up, :down ]
+  after_action :verify_authorized, except: [ :up, :down ]
 
   respond_to :html
 
-  def index
-    @quickies = Quickie.all
-    respond_with(@quickies)
-  end
-
   def show
-    respond_with(@quicky)
+    authorize @quickie
+
+    respond_with(@quickie)
   end
 
   def new
-    @quicky = Quickie.new
-    respond_with(@quicky)
+    @quickie = Quickie.new
+    authorize @quickie
+
+    respond_with(@quickie)
   end
 
   def edit
+    authorize @quickie
   end
 
   def create
-    @quicky = Quickie.new(quickie_params)
-    @quicky.creator = current_user
-    @quicky.save
-    respond_with(@quicky)
+    @quickie = Quickie.new(quickie_params)
+    @quickie.creator = current_user
+
+    authorize @quickie
+
+    if @quickie.save
+      flash[:notice] = "Quickie created."
+      respond_with(@quickie)
+    else
+      render :new, :alert => "Unable to create quickie."
+    end
   end
 
   def update
-    @quicky.update(quickie_params)
-    respond_with(@quicky)
+    authorize @quickie
+
+    if @quickie.update(quickie_params)
+      flash[:notice] = "Quickie updated."
+      respond_with(@quickie)
+    else
+      render :show, :alert => "Unable to update quickie."
+    end
   end
 
   def destroy
-    @quicky.destroy
-    respond_with(@quicky)
+    authorize @quickie
+
+    @quickie.destroy
+    redirect_to root_path, :notice => "Quickie deleted."
   end
 
   # Votes
   def up
-    @quicky.liked_by current_user
+    @quickie.liked_by current_user
     render 'vote_changed'
   end
 
   def down
-    @quicky.unliked_by current_user
+    @quickie.unliked_by current_user
     render 'vote_changed'
   end
 
   private
-    def set_quicky
-      @quicky = Quickie.find(params[:id])
+    def set_quickie
+      @quickie = Quickie.find(params[:id])
     end
 
-    def quicky_params
-      params.require(:quicky).permit(:title, :description, :date, :user_group_id)
+    def quickie_params
+      params.require(:quickie).permit(:title, :description, :date, :user_group_id)
     end
 end

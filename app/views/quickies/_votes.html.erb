@@ -2,11 +2,11 @@ Votes :
 <%= quickie.votes_for.up.size %>
 <% if (current_user) %>
   <% if (current_user.voted_for? quickie) %>
-    <%= link_to down_quicky_path(quickie), remote: :true, method: :put do %>
+    <%= link_to down_quickie_path(quickie), remote: :true, method: :put do %>
       <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
     <% end %>
   <% else %>
-    <%= link_to up_quicky_path(quickie), remote: :true, method: :put do %>
+    <%= link_to up_quickie_path(quickie), remote: :true, method: :put do %>
       <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
     <% end %>
   <% end %>

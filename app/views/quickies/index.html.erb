@@ -13,16 +13,16 @@
   </thead>
 
   <tbody>
-    <% @quickies.each do |quicky| %>
+    <% @quickies.each do |quickie| %>
       <tr>
-        <td><%= quicky.title %></td>
-        <td><%= quicky.description %></td>
-        <td><%= quicky.date %></td>
-        <td><%= quicky.user_group.name %></td>
-        <td><%= quicky.creator.name %></td>
-        <td><%= link_to 'Show', quicky %></td>
-        <td><%= link_to 'Edit', edit_quicky_path(quicky) %></td>
-        <td><%= link_to 'Destroy', quicky, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= quickie.title %></td>
+        <td><%= quickie.description %></td>
+        <td><%= quickie.date %></td>
+        <td><%= quickie.user_group.name %></td>
+        <td><%= quickie.creator.name %></td>
+        <td><%= link_to 'Show', quickie %></td>
+        <td><%= link_to 'Edit', edit_quickie_path(quickie) %></td>
+        <td><%= link_to 'Destroy', quickie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Quickie', new_quicky_path %>
+<%= link_to 'New Quickie', new_quickie_path %>

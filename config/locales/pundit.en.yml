@@ -1,0 +1,7 @@
+en:
+ pundit:
+   default: 'You are not authorized to perform this action.'
+   quickie_policy:
+     edit?: 'You cannot edit this quickie!'
+     update?: 'You cannot edit this quickie!'
+     destroy?: 'You cannot delete this quickie!'
