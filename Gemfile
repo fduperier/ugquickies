@@ -16,6 +16,7 @@ gem 'pundit'
 gem 'simple_form'
 gem 'upmin-admin'
 gem 'acts_as_votable'
+gem 'shareable'
 
 group :development do
   gem 'better_errors'
