@@ -13,7 +13,10 @@
 		</div>
 	</div>
 	<div class="row">&nbsp;</div>
-	<div class="row"><%= link_to "Add new quickie", new_quickie_path %></div>
+
+	<% if policy(Quickie.new).new? %>
+		<div class="row"><%= link_to "Add new quickie", new_quickie_path %></div>
+	<% end %>
   <div class="row">
     <!-- Past quickies -->
     <div class="col-md-6">

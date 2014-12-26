@@ -11,7 +11,7 @@ class QuickiePolicy
   end
 
   def new?
-    true
+    @current_user
   end
 
   def create?
