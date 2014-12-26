@@ -12,7 +12,7 @@ Shareable.configure do |config|
   ###############
   ##facebook
   ###############
-  #config.app_id='' # required if using facebook button!
+  config.app_id=Rails.application.secrets.facebook_app_id # required if using facebook button!
   #config.send= 'false'
   config.layout='standard' # 'standard', 'button_count', 'button' or 'box_count'. '' defaults to 'standard'.
   config.show_faces='false' # 'true' or 'false'. '' defaults to 'false'. Don't set to 'true', if kid_directed_site is also 'true'.
