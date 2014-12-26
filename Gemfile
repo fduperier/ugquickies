@@ -38,6 +38,7 @@ group :production do
   gem 'unicorn'
   gem 'mysql2'
   gem 'cloudcontrol-rails'
+  gem 'rails_12factor'
 end
 group :test do
   gem 'capybara'
