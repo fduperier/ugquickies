@@ -39,6 +39,7 @@ group :production do
   gem 'mysql2'
   gem 'cloudcontrol-rails'
   gem 'rails_12factor'
+  gem 'shelly-dependencies'
 end
 group :test do
   gem 'capybara'
