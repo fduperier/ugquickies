@@ -20,8 +20,32 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-
+  home:
+    title: 'Home'
+    welcome: 'Welcome To User Group Quickies'
+    user_groups:
+      all: 'All'
+    quickies:
+      add_new: "Add new quickie"
+      top: "Top 3"
+      past:
+        title: 'Past quickies'
+        none: 'No past quickies yet'
+      future:
+        title: 'Future quickies'
+        none: 'No future quickies yet'
+  quickies:
+    votes: 'Votes'
+    take_place_on: "Take place on"
+    description: Description
+    created_by: "Posted by"
+    new:
+      title: 'New quickie'
+    edit:
+      title: 'Editing quickie'
+      link: 'Edit'
+    delete:
+      link: 'Delete'
 
   date:
     abbr_day_names:
@@ -226,4 +250,5 @@ en:
       long: '%B %d, %Y %H:%M'
       medium: '%d/%m/%Y %H:%M'
       short: '%d %b %H:%M'
+      tiny: "%H:%M"
     pm: pm

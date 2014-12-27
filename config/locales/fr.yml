@@ -7,6 +7,33 @@
 # Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
 
 fr:
+  home:
+    title: 'Accueil'
+    welcome: 'Bienvenue sur les Quickies des User Groups'
+    user_groups:
+      all: 'Tous'
+    quickies:
+      add_new: "Ajouter un nouveau quickie"
+      top: "Top 3"
+      past:
+        title: 'Quickies passés'
+        none: "Il n'y a pas encore de Quickies passés"
+      future:
+        title: 'Quickies à venir'
+        none: "Il n'y a pas encore de Quickies à venir"
+  quickies:
+    votes: 'Votes'
+    take_place_on: "Aura lieu le"
+    description: Description
+    created_by: "Posté par"
+    new:
+      title: 'Créer un nouveau quickie'
+    edit:
+      title: 'Mettre à jour le quickie'
+      link: 'Editer'
+    delete:
+      link: 'Supprimer'
+
   date:
     abbr_day_names:
       - dim
@@ -212,4 +239,5 @@ fr:
       long: "%A %d %B %Y %Hh%M"
       medium: "%d/%m/%Y %H:%M"
       short: "%d %b %Hh%M"
+      tiny: "%H:%M"
     pm: 'pm'

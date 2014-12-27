@@ -1,5 +1,5 @@
 <% content_for :title do "Editing " + @quickie.title + " at " + @quickie.user_group.name + " | UgQuickies" end %>
 
-<h1>Editing quickie</h1>
+<h1><%= t('quickies.edit.title') %></h1>
 
 <%= render 'form' %>

@@ -1,0 +1,101 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+--- 
+fr: 
+  activerecord: 
+    attributes: 
+      commontator/comment: 
+        body: Commentaire
+        creator: Créateur
+        editor: Editeur
+        thread: Discussion
+      commontator/subscription: 
+        subscriber: Abonné
+        thread: Discussion
+      commontator/thread: 
+        commontable: Commontable
+    models: 
+      commontator/comment: 
+        one: commentaire
+        other: commentaires
+      commontator/subscription: 
+        one: abonnement
+        other: abonnements
+      commontator/thread: 
+        one: discussion
+        other: discussions
+  commontator: 
+    anonymous: Anonyme
+    comment: 
+      actions: 
+        cancel: Annuler
+        confirm_delete: "Etes-vous sûr de vouloir supprimer ce commentaire ?"
+        create: "Poster le commentaire"
+        delete: Supprimer
+        edit: Editer
+        new: "Nouveau commentaire"
+        undelete: "Annuler la suppression"
+        update: "Mettre à jour le commentaire"
+      errors: 
+        already_deleted: "Ce commentaire a déjà été supprimé."
+        create: "Ce commentaire ne peut pas être posté :"
+        double_posted: "is a duplicate of another comment."
+        not_deleted: "Ce commentaire n'est pas supprimé."
+        update: "Ce commentaire ne peut pas être modifié :"
+      status: 
+        created_at: "Posté le %{created_at}."
+        deleted_by: "Commentaire supprimé par %{deleter_name}."
+        updated_at: "Dernière modification par %{editor_name} le %{updated_at}."
+    email: 
+      comment_created: 
+        body: "%{creator_name} a posté un commentaire sur %{commontable_name}:"
+        subject: "%{creator_name} a posté un commentaire sur  %{commontable_name}"
+      thread_link_html: "<a href=\"%{commontable_url}\">Cliquez ici</a> pour voir tous  les commentaire sur %{commontable_name}."
+      undisclosed_recipients: "Undisclosed Recipients"
+    require_login: "Vous devez être connecté avant de pouvoir poster un commentaire."
+    subscription: 
+      actions: 
+        confirm_unsubscribe: "Etes-vous sûr de vouloir vous désabonner de cette discussion ?"
+        subscribe: "S'abonner"
+        unsubscribe: "Se désabonner"
+      errors: 
+        already_subscribed: "Vous êtes déjà abonné à cette discussion."
+        not_subscribed: "Vous n'êtes pas abonné à cette discussion."
+    thread: 
+      actions: 
+        show_all: "Montrer tous les commentaires"
+        filter: "Filtrer les commentaires"
+        close: "Fermer la discussion"
+        confirm_close: "Etes-vous sûr de vouloir fermer cette discussion ?"
+        reopen: "Réouvrir la discussion"
+        show: "Montrer les Commentaires"
+      errors: 
+        already_closed: "Cette discussion a déjà été fermée."
+        not_closed: "Cette discussion n'est pas fermée."
+      status: 
+        cannot_post: "De nouveaux commenaitres ne peuvent être postés pour le moment."
+        closed: "Commentaires (Fermé par %{closer_name})"
+        open: Commentaires
+  time: 
+    formats: 
+      commontator: "%d %b %Y à %H:%M"
+

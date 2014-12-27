@@ -1,8 +1,8 @@
 <div class="media thumbnail quickie quickie-<%= quickie.id %> clearfix">
   <div class="media-left col-md-3">
-    <a href="#">
+		<%= link_to root_path(user_group: quickie.user_group.id) do %>
       <%= image_tag "#{quickie.user_group.picture_name}", title: quickie.user_group.name, alt: quickie.user_group.name %>
-    </a>
+		<% end %>
   </div>
   <div class="media-body col-md-6">
     <h4 class="media-heading">
@@ -12,8 +12,8 @@
   </div>
   <div class="media-right text-center thumbnail col-md-3">
 		<div class="date">
-	    <%= quickie.date.strftime("%d/%m/%Y") %><br />
-	    <%= quickie.date.strftime("%H:%M") %><br />
+	    <%= quickie.date.strftime(t('date.formats.default')) %><br />
+	    <%= quickie.date.strftime(t('time.formats.tiny')) %><br />
 		</div>
     <div class="nb-vote">
       <%= render partial: 'quickies/votes', locals: { quickie: quickie } %>

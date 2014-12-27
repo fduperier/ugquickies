@@ -1,20 +1,20 @@
-en:
+fr:
   simple_form:
-    "yes": 'Yes'
-    "no": 'No'
+    "yes": 'Oui'
+    "no": 'Non'
     required:
-      text: 'required'
+      text: 'obligatoire'
       mark: '*'
     buttons:
-      cancel: 'Cancel'
-      update: 'Update'
+      cancel: 'Annuler'
+      update: 'Mettre à jour'
       user:
-        cancel: "Cancel my account"
+        cancel: "Annuler mon compte"
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "Veuillez prendre en compte ces erreurs :"
     # Examples
     # labels:
     #   defaults:
@@ -38,3 +38,21 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    labels:
+      defaults:
+        password: 'Mot de passe'
+      quickie:
+        title: "Titre"
+        description: "Description"
+        date: "Date"
+        user_group: "User Group"
+      user:
+        remember_me: "Se souvenir de moi"
+  helpers:
+    submit:
+      quickie:
+        create: "Créer un quickie"
+        submit: "Enregistrer ce quickie"
+        update: "Mettre à jour ce quickie"
+      user:
+        update: "Mettre à jour"

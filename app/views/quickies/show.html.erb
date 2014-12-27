@@ -12,36 +12,28 @@
     <div class="panel panel-default <%= @quickie.user_group.name.parameterize %>">
       <div class="panel-heading">
         <h3 class="panel-title text-right ">
-            <%= l @quickie.date, format: :medium %>
+            <%= t('quickies.take_place_on') %> <%= l @quickie.date, format: :medium %>
         </h3>
       </div>
       <div class="panel-body">
         <p>
-          <strong>Description:</strong><br />
+          <strong><%= t('quickies.description') %> :</strong><br />
           <%= @quickie.description %>
         </p>
       </div>
       <div class="panel-footer">
         <span class="text-left">
           <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-          <u>Posted by:</u>
+          <u><%= t('quickies.created_by') %> :</u>
           <%= @quickie.creator.name %>
         </span>
         <span class="pull-right text-right">
           <% if policy(@quickie).update? %>
-            <%= link_to edit_quickie_path(@quickie) do %>
-              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-              Edit
-            <% end %>
+            <%= link_to edit_quickie_path(@quickie) do %><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> <%= t('quickies.edit.link') %><% end %>
           <% end %>
-          <% if policy(@quickie).update? and policy(@quickie).destroy? %>
-            |
-          <% end %>
+          <% if policy(@quickie).update? and policy(@quickie).destroy? %> | <% end %>
           <% if policy(@quickie).destroy? %>
-            <%= link_to @quickie, confirm: 'Are you sure?', method: :delete do %>
-              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-              Destroy
-            <% end %>
+            <%= link_to @quickie, confirm: 'Are you sure?', method: :delete do %><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> <%= t('quickies.delete.link') %><% end %>
           <% end %>
         </span>
       </div>
