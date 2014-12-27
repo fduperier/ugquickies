@@ -1,36 +1,60 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title do "Showing " + @quickie.title + " at " + @quickie.user_group.name + " | UgQuickies" end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @quickie.title %>
-</p>
+<h1 class="text-center"><%= @quickie.title %></h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @quickie.description %>
-</p>
+<div class="row">&nbsp;</div>
 
-<p>
-  <strong>Date:</strong>
-  <%= @quickie.date %>
-</p>
+<div class="row">
+  <div class="col-md-3 col-md-offset-1">
+    <%= image_tag "#{@quickie.user_group.picture_name}", title: @quickie.user_group.name, alt: @quickie.user_group.name %>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default <%= @quickie.user_group.name.parameterize %>">
+      <div class="panel-heading">
+        <h3 class="panel-title text-right ">
+            <%= l @quickie.date, format: :medium %>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          <strong>Description:</strong><br />
+          <%= @quickie.description %>
+        </p>
+      </div>
+      <div class="panel-footer">
+        <span class="text-left">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <u>Posted by:</u>
+          <%= @quickie.creator.name %>
+        </span>
+        <span class="pull-right text-right">
+          <% if policy(@quickie).update? %>
+            <%= link_to edit_quickie_path(@quickie) do %>
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+              Edit
+            <% end %>
+          <% end %>
+          <% if policy(@quickie).update? and policy(@quickie).destroy? %>
+            |
+          <% end %>
+          <% if policy(@quickie).destroy? %>
+            <%= link_to @quickie, confirm: 'Are you sure?', method: :delete do %>
+              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+              Destroy
+            <% end %>
+          <% end %>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>User group:</strong>
-  <%= @quickie.user_group.name %>
-</p>
+<div class="row col-md-9 col-md-offset-1 text-right">
+  <%= render_shareable %>
+</div>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @quickie.creator.name %>
-</p>
+<div class="row clearfix">&nbsp;</div>
 
-<% if policy(@quickie).update? %>
-	<%= link_to 'Edit', edit_quickie_path(@quickie) %> |
-<% end %>
-<%= link_to 'Back', root_path %>
-<% if policy(@quickie).destroy? %>
-| <%= link_to 'Destroy', @quickie, confirm: 'Are you sure?', method: :delete %>
-<% end %>
-
-<%= commontator_thread(@quickie) %>
+<div class="row col-md-8 col-md-offset-2">
+  <%= commontator_thread(@quickie) %>
+</div>

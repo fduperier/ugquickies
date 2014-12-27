@@ -29,3 +29,21 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    # labels:
+    #   user:
+    #     username: 'User name'
+    #     password: 'Password'
+    # hints:
+    #   user:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # placeholders:
+    #   user:
+    #     username: 'Your username'
+    #     password: '****'
+    # include_blanks:
+    #   user:
+    #     age: 'Rather not say'
+    # prompts:
+    #   user:
+    #     gender: 'Select your gender'

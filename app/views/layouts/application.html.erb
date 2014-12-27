@@ -5,7 +5,6 @@
     <title><%= content_for?(:title) ? yield(:title) : "Ugquickies" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ugquickies" %>">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -13,9 +12,11 @@
       <%= render 'layouts/navigation' %>
     </header>
     <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+      <div class="container">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+       </div>
     </main>
-    <%= render_shareable %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>
