@@ -52,7 +52,6 @@ SimpleForm.setup do |config|
   end
 
   config.wrappers :horizontal_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
-    config.form_class = 'simple_form form-horizontal'
     b.use :html5
     b.use :placeholder
     b.optional :maxlength
