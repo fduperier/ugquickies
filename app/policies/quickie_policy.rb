@@ -19,7 +19,7 @@ class QuickiePolicy
   end
 
   def edit?
-    @current_user and ( @current_user.admin? or @quickie.owner == @current_user )
+    @current_user and ( @current_user.admin? or @quickie.creator == @current_user )
   end
 
   def update?
