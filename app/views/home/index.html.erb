@@ -1,18 +1,27 @@
 <% content_for :title do t('home.welcome') + " | UgQuickies" end %>
+<div class="row">
+  <div class="col-md-1">
+    <%= image_tag "chaton-left.jpg", :title => "Chaton de gauche" %>
+  </div>
+  <div class="col-md-10">
+    <h1 class="text-center"><%= t('home.welcome') %></h1>
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
 
-<h1 class="text-center"><%= t('home.welcome') %></h1>
-<div class="row">&nbsp;</div>
-<div class="row">&nbsp;</div>
-
-<div class="row text-center">
-  <div class="btn-group" role="group">
-    <%= link_to t('home.user_groups.all'), root_path, class: "btn #{class_name_for_all}", role: 'button' %>
-    <% @user_groups.each do |user_group| %>
-      <%= link_to user_group.name, root_path(user_group: user_group.id), class: "btn #{class_name_for(user_group)}", role: 'button' %>
-    <% end %>
+    <div class="row text-center">
+      <div class="btn-group" role="group">
+        <%= link_to t('home.user_groups.all'), root_path, class: "btn #{class_name_for_all}", role: 'button' %>
+        <% @user_groups.each do |user_group| %>
+          <%= link_to user_group.name, root_path(user_group: user_group.id), class: "btn #{class_name_for(user_group)}", role: 'button' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">&nbsp;</div>
+  </div>
+  <div class="col-md-1">
+    <%= image_tag "chaton-right.jpg", :title => "Chaton de gauche" %>
   </div>
 </div>
-<div class="row">&nbsp;</div>
 
 <% if policy(Quickie.new).new? %>
   <div class="row"><%= link_to t('home.quickies.add_new'), new_quickie_path %></div>

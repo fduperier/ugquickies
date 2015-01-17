@@ -21,8 +21,10 @@ class HomeController < ApplicationController
 
     begin
       @recent_tweets = @twitter_client.recent_tweets(10)
-    rescue Twitter::Error::TooManyRequests
-      logger.error "Twitter::Error::TooManyRequests - Rate limit exceeded"
+      
+    rescue Twitter::Error => exception
+      logger.error exception.message
+      logger.error exception.backtrace.join $/
       @recent_tweets_error = t('home.tweets.error')
     end
   end
