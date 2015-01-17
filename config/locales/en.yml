@@ -34,6 +34,9 @@ en:
       future:
         title: 'Future quickies'
         none: 'No future quickies yet'
+    tweets:
+      error: "Impossible to retrieve tweets, sorry :("
+      none: "No tweets with #Ugquickie to show :("
   quickies:
     votes: 'Votes'
     take_place_on: "Take place on"

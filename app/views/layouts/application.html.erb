@@ -17,6 +17,12 @@
         <%= yield %>
        </div>
     </main>
+    <footer class="footer">
+      <div class="container text-center">
+        <%= content_for?(:footer) ? yield(:footer) : '' %>
+        <div class="row">Copyright 2015</div>
+      </div>
+    </footer>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </body>
 </html>

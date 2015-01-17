@@ -17,6 +17,7 @@ gem 'upmin-admin'
 gem 'acts_as_votable'
 gem 'shareable'
 gem 'commontator', '~> 4.10.0'
+gem 'twitter'
 
 group :development do
   gem 'better_errors'

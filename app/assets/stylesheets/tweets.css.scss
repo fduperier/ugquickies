@@ -1,0 +1,9 @@
+// Place all the styles related to the Quickies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.carousel-indicators li { border: 1px solid #333; }
+.carousel-inner .item { min-height: 150px; }
+.carousel-control.left, .carousel-control.right { background: none; }
+
+.tweet { color: #333; text-shadow: none; }
+.tweet .time:before { content: "\00b7"; }
