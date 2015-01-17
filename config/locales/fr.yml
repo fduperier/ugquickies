@@ -22,8 +22,8 @@ fr:
         title: 'Quickies à venir'
         none: "Il n'y a pas encore de Quickies à venir"
     tweets:
-			error: "Impossible to retrieve tweets, sorry :("
-			none: "No tweets with #Ugquickie to show :("
+      error: "Impossible to retrieve tweets, sorry :("
+      none: "No tweets with #Ugquickie to show :("
   quickies:
     votes: 'Votes'
     take_place_on: "Aura lieu le"
