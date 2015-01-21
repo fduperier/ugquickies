@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :quickies, except: [ :index ] do
     put "up", to: :up, on: :member
     put "down", to: :down, on: :member
+    get "vote_by_tweet", to: :vote_by_tweet, on: :member
   end
 
   root to: 'home#index'

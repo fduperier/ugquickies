@@ -20,6 +20,10 @@
           <strong><%= t('quickies.description') %> :</strong><br />
           <%= @quickie.description %>
         </p>
+        <p>
+          <strong><%= t('quickies.hashtag') %> :</strong><br />
+          <%= "##{@quickie.hashtag}" if @quickie.hashtag %>
+        </p>
       </div>
       <div class="panel-footer">
         <span class="text-left">

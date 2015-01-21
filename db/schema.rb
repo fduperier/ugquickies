@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141224135540) do
+ActiveRecord::Schema.define(version: 20150119215509) do
 
   create_table "commontator_comments", force: true do |t|
     t.string   "creator_type"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20141224135540) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.string   "hashtag"
   end
 
   add_index "quickies", ["cached_votes_down"], name: "index_quickies_on_cached_votes_down"
@@ -80,7 +81,17 @@ ActiveRecord::Schema.define(version: 20141224135540) do
   add_index "quickies", ["cached_weighted_score"], name: "index_quickies_on_cached_weighted_score"
   add_index "quickies", ["cached_weighted_total"], name: "index_quickies_on_cached_weighted_total"
   add_index "quickies", ["creator_id"], name: "index_quickies_on_creator_id"
+  add_index "quickies", ["hashtag"], name: "index_quickies_on_hashtag", unique: true
   add_index "quickies", ["user_group_id"], name: "index_quickies_on_user_group_id"
+
+  create_table "tweet_searches", force: true do |t|
+    t.integer  "max_id",       default: 0,   null: false
+    t.integer  "since_id",     default: 0,   null: false
+    t.integer  "count",        default: 0,   null: false
+    t.decimal  "completed_in", default: 0.0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_groups", force: true do |t|
     t.string   "name"
@@ -108,6 +119,16 @@ ActiveRecord::Schema.define(version: 20141224135540) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "vote_by_tweets", force: true do |t|
+    t.integer  "quickie_id"
+    t.integer  "tweet_id",          default: 0,  null: false
+    t.string   "tweet_screen_name", default: ""
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "vote_by_tweets", ["quickie_id"], name: "index_vote_by_tweets_on_quickie_id"
 
   create_table "votes", force: true do |t|
     t.integer  "votable_id"

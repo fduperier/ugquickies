@@ -21,7 +21,6 @@ class HomeController < ApplicationController
 
     begin
       @recent_tweets = @twitter_client.recent_tweets(10)
-      
     rescue Twitter::Error => exception
       logger.error exception.message
       logger.error exception.backtrace.join $/
@@ -31,6 +30,6 @@ class HomeController < ApplicationController
 
   private
     def load_twitter_client
-      @twitter_client = TwitterClient.new
+      @twitter_client = Twitter::MyClient.new
     end
 end

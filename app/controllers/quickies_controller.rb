@@ -71,6 +71,6 @@ class QuickiesController < ApplicationController
     end
 
     def quickie_params
-      params.require(:quickie).permit(:title, :description, :date, :user_group_id)
+      params.require(:quickie).permit(:title, :description, :date, :user_group_id, :hashtag)
     end
 end

@@ -5,6 +5,13 @@
     <%= f.input :title, required: :true %>
     <%= f.input :description, required: :true %>
     <%= f.input :date, required: :true, as: :date_time_picker, "data-format" => "dd/MM/yyyy hh:mm"  %>
+    <%#= f.input :hashtag, required: :true %>
+		<%= f.input :hashtag, required: :true do %>
+			<div class="input-group">
+			  <span class="input-group-addon">#</span>
+				<%= f.input_field :hashtag, class: "form-control" %>
+			</div>
+		<% end %>
     <%= f.association :user_group, required: :true %>
   </div>
 

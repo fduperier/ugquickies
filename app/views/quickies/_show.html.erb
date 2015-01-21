@@ -8,7 +8,11 @@
     <h4 class="media-heading">
       <%= link_to quickie.title, quickie_path(quickie) %>
     </h4>
-    <%= quickie.description %>
+    <p><%= quickie.description %></p>
+		<p>
+	    <strong><%= t('quickies.hashtag') %> :</strong>
+      <%= "##{quickie.hashtag}" if quickie.hashtag %>
+		</p>
   </div>
   <div class="media-right text-center thumbnail col-md-3">
 		<div class="date">
